@@ -5,8 +5,14 @@ using System.Text;
 
 namespace VLCore.Utils
 {
+    /// <summary>
+    /// xml serializer
+    /// </summary>
     public static class XmlSerializer
     {
+        /// <summary>
+        /// serialize xml
+        /// </summary>
         public static void Serialize<T>(string path, T obj)
         {
             using (System.IO.StreamWriter writer = new System.IO.StreamWriter(path))
@@ -16,6 +22,9 @@ namespace VLCore.Utils
             }
         }
 
+        /// <summary>
+        /// deserialize xml
+        /// </summary>
         public static T Deserialize<T>(string path)
         {
             if (!System.IO.File.Exists(path))

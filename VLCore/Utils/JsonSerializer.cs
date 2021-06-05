@@ -7,8 +7,14 @@ using System.Runtime.Serialization.Json;
 
 namespace VLCore.Utils
 {
+    /// <summary>
+    /// json serializer
+    /// </summary>
     public static class JsonSerializer
     {
+        /// <summary>
+        /// serialize json
+        /// </summary>
         public static string Serialize(object obj)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -23,6 +29,9 @@ namespace VLCore.Utils
             }
         }
 
+        /// <summary>
+        /// deserialize json
+        /// </summary>
         public static T Deserialize<T>(string jsonStr)
         {
             using (MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(jsonStr)))

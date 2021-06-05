@@ -10,6 +10,9 @@ using System.Text;
 
 namespace VLCore.Utils
 {
+    /// <summary>
+    /// log helper
+    /// </summary>
     public static class LogHelper
     {
         private static readonly ILog log = LogManager.GetLogger("Logger");
@@ -45,46 +48,64 @@ namespace VLCore.Utils
             hierarchy.Configured = true;
         }
 
-        public static void LogInfo(string Message)
+        /// <summary>
+        /// log info
+        /// </summary>
+        public static void LogInfo(string msg)
         {
             if (!log.IsInfoEnabled)
                 SetConfig();
-            log.Info(Message);
+            log.Info(msg);
         }
 
-        public static void LogInfo(string Message, Exception ex)
+        /// <summary>
+        /// log info
+        /// </summary>
+        public static void LogInfo(string msg, Exception ex)
         {
             if (!log.IsInfoEnabled)
                 SetConfig();
-            log.Info(Message, ex);
+            log.Info(msg, ex);
         }
 
-        public static void ErrorInfo(string Message)
+        /// <summary>
+        /// log error
+        /// </summary>
+        public static void LogError(string msg)
         {
             if (!log.IsInfoEnabled)
                 SetConfig();
-            log.Error(Message);
+            log.Error(msg);
         }
 
-        public static void ErrorInfo(string Message, Exception ex)
+        /// <summary>
+        /// log error
+        /// </summary>
+        public static void LogError(string msg, Exception ex)
         {
             if (!log.IsInfoEnabled)
                 SetConfig();
-            log.Error(Message, ex);
+            log.Error(msg, ex);
         }
 
-        public static void DebugInfo(string Message)
+        /// <summary>
+        /// log debug
+        /// </summary>
+        public static void LogDebug(string msg)
         {
             if (!log.IsInfoEnabled)
                 SetConfig();
-            log.Debug(Message);
+            log.Debug(msg);
         }
 
-        public static void DebugInfo(string Message, Exception ex)
+        /// <summary>
+        /// log debug
+        /// </summary>
+        public static void LogDebug(string msg, Exception ex)
         {
             if (!log.IsInfoEnabled)
                 SetConfig();
-            log.Debug(Message, ex);
+            log.Debug(msg, ex);
         }
     }
 }
